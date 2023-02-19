@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>project.properties</title>
+    <style>
+      .code-block {
+        background-color: #f7f7f7;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        font-family: monospace;
+        overflow: auto;
+        width: 100%;
+      }
+      
+      .code-block pre {
+        margin: 0;
+        padding: 0;
+      }
+      
+      .code-block pre code {
+        display: block;
+        font-family: monospace;
+        white-space: pre;
+        margin: 0;
+        padding: 10px;
+      }
+      
+
+    </style>
+  </head>
+  <body>
+    <% if (REPO && filePath && filePathUrl) { %>
+      <p>Repository: <a target="_blank" href="<%= REPO_URL %>"><%= REPO %></a></p>
+      <p>File: <a target="_blank" href="<%= filePathUrl %>"><%= filePath %></a></p>
+    <% } %>
+    <% if (content) { %>
+      <div class="code-block">
+        <div class="line-numbers"></div>
+        <pre><code><%= content %></code></pre>
+      </div>
+    <% } else { %>
+      <p>You have exceeded a secondary rate limit and have been temporarily blocked from content creation. Please retry your request again later.</p>
+    <% } %>
+  </body>
+</html>
